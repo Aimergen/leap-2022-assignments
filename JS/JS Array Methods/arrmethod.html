@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //polindrom
+
+        
+        // // let input=prompt('insert your input');
+        // function isPolindrom(data){
+        //     return data=== data.split('').reverse().join('');
+
+        // }
+        // // console.log(isPolindrom(input));
+
+
+//         1. Банканд хүмүүс оочирлож байв. Хаах цаг дөхиж оочирт байгаа эхний 10 хүнийг аваад хаахаар болов. Гэтэл хаанаас ч юм 2 эгч (эгч1, эгч2) Гончигсумлай - д оочир захьсан байсан гэж дайрж орж ирээд зогсчихлоо. 
+// 2. Банкнаас амжиж үйлчилгээ авах хүмүүсийн array - ийг 10 хүнтэй array болгоорой.
+// queueLine = [ "Бат", "Дорж", "Пунцаг", "Готов", "Баяраа", "Болд", "Навчаа", "Гончигсумлай", "Цэцгээ", "Нэргүй", "Бальбийгомбо", "Баатар", "Сүхээ" ]
+
+        let queueLine = [ "Бат", "Дорж", "Пунцаг", "Готов", 
+        "Баяраа", "Болд", "Навчаа", "Гончигсумлай", "Цэцгээ", 
+        "Нэргүй", "Бальбийгомбо", "Баатар", "Сүхээ" ];
+        console.log(queueLine);
+        function bank (egch1, egch2){
+            const index = queueLine.indexOf('Гончигсумлай');
+            queueLine.splice(index+1,0,egch1,egch2);
+            queueLine.splice(10,queueLine.length-10)
+            return queueLine;
+        }
+        console.log(bank('dulmaa','matraa'));
+    </script>
+
+
+    <script>
+    // Дараах 2 хэмжээст carBrands array дотор машины дата агуулдаг. 
+    // 0 index нь машины брэнд
+    // 1 index нь улс
+    // 2 дахь index нь үйлдвэрлэгдсэн он нь байгаа.
+
+        // const carBrands = [
+        //     ["Aston Martin Lagonda Ltd", "UK", 2016],
+        //     ["Audi", "Germany", 2016],
+        //     ["BMW", "Germany", 2016],
+        //     ["Chevrolet", "USA", 2016],
+        //     ["Dodge", "USA", 2016],
+        //     ["Ferrari", "Italy", 2016],
+        //     ["Honda", "Japan", 2016],
+        //     ["Jaguar", "UK", 2016],
+        //     ["Lamborghini", "Italy", 2016],
+        // ];
+
+        // function searchByFirstDigit(brands, letter){
+        //     const carNames=[];
+        //     for(let i=0; i<brands.length; i++){
+        //         carBrands.push(brands[i][0]);
+        //     }
+        //     console.log(carNames);
+
+        //     const result=[];
+        //     for(let i=0; i<carNames.length; i++){
+        //         if(carNames[i][0].tolowerCase()===letter.tolowerCase()){
+        //             result.push(brands[i]);
+        //         }
+        //     }
+        //     return result;
+        // }
+        // const haih=prompt('mashinii nere oruulna uu?');
+        // console.log(searchByFirstDigit(carBrands, haih));
+    </script>
+
+    <script>
+
+        const shoppingCart=['Milk', 'Coffee', 'Tea', 'Honey'];
+        shoppingCart.splice(0 ,0 ,'Meat');
+        console.log(shoppingCart);
+
+        shoppingCart.push('Sugar');
+        console.log(shoppingCart);
+
+        shoppingCart.splice(shoppingCart.indexOf('Honey'),1);
+        console.log(shoppingCart);
+
+       
+        console.log(shoppingCart.join('-').replace('Tea','Green Tea').split('-'));
+
+
+    </script>
+
+    <script>
+
+        const input= 45361;
+
+        function isPolindrom(data){
+            return data.split('').reverse().join('');
+
+        }
+        console.log(isPolindrom(input.toString()));
+        
+    </script>
+</body>
+</html>
