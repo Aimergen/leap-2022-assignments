@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="helloText">
+
+    </div>
+    <div class="hellobeeb">
+        
+    </div>
+    <script>
+        
+        document.getElementById('helloText').innerHTML=" hello world";
+        document.getElementsByClassName('hellobeeb')[0].innerHTML=' hi baby';
+    </script>
+
+    <div class="dummy">
+        <div>lolol</div>
+        <div>lolol</div>
+        <div>lolol</div>
+        <p id="demo"></p>
+    </div>
+
+    <div id="target">
+
+    </div>
+    <p id="test">
+        hello world
+    </p>
+    <script>
+        document.getElementById("test").style.color="#ff0000";
+        document.getElementById("test").style.fontSize='24px';
+    </script>
+    <!-- <script src="./dummy.js"></script> -->
+<!-- 
+    <script>
+        document.getElementsByTagName('body').style.color='red';
+    </script>
+
+    <script>
+        function getRandomNumber(min , max){
+            return Math.floor(Math.random()*(max-min))+min;
+
+        }
+        const green=getRandomNumber(0,255);
+        const red= getRandomNumber(0,255);
+        const blue=getRandomNumber(0, 255);
+        const htmltag=document.querySelector('html');
+        htmltag.style.backgroundColor=`rgb(${red},${green},${blue}`;
+    </script> --> -->
+
+
+    <div>
+        Hai beeb
+        <button  id="myBtn"> dar</button>
+    </div>
+    <script>
+
+        let myButton=document.getElementById('myBtn');
+        function changeBackgroundColor(){
+            myButton.style='background-color: green';
+        }
+        myButton.addEventListener('click', changeBackgroundColor());
+
+        let myBtn=document.getElementById('myBtn');
+        function changeBackgroundColorAll(){
+            myBtn.style='background-color: green'
+        }
+        myBtn.addEventListener('click', changeBackgroundColorAll());
+
+        let backC=document.getElementById('myBtn');
+        function getRandomNumber(min , max){
+            return Math.floor(Math.random()*(max-min))+min;
+
+        }
+            const green=getRandomNumber(0,255);
+            const red= getRandomNumber(0,255);
+            const blue=getRandomNumber(0, 255);
+            const htmltag=document.querySelector('body');
+        htmltag.style.backgroundColor=`rgb(${red},${green},${blue}`;
+        backC.addEventListener('click', getRandomNumber());
+    </script>
+    </body>
+</html>
