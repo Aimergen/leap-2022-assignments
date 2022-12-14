@@ -1,0 +1,121 @@
+/* root{
+    --height:500vh;
+}
+body{
+    margin-bottom: 0;
+    background: linear-gradient(#2980b9, #6dd5fa, #fff);
+}
+
+main{
+    min-height: 100vh;
+    position: relative;
+}
+
+.grass{
+    height: 150px;
+    background-image: url("https://opengameart.org/sites/default/files/grass_block.png ");
+    background-size: contain;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.ladder{
+    height: calc(var(--height)-);
+    background-image: url("https://media.discordapp.net/attachments/1039034574296076399/1052473001020489788/image");
+    position: absolute;
+    width: 50px;
+    left: 50%;
+    transform: translateX(-50);    
+}
+.progress{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+
+} */
+
+:root {
+    --height: 500vh;
+  }
+  body {
+    margin: 0;
+    background: linear-gradient(#2980b9, #6dd5fa, #ffffff);
+  }
+  
+  main {
+    min-height: var(--height);
+    position: relative;
+  }
+  
+  .progress-bar{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top:0;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 3;
+  }
+  .progress-bar-inner{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: purple;
+    width: 0;
+  }
+  .grass {
+    height: 150px;
+    background-image: url("https://media.discordapp.net/attachments/1039034574296076399/1052473001020489788/image_2.jpg?width=577&height=577");
+    background-size: contain;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .ladder {
+    height: calc(var(--height) - 150px);
+    background-image: url("https://media.discordapp.net/attachments/1039034574296076399/1052472918547902524/image_3.png?width=49&height=450");
+    width: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .progress {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 72px;
+    text-align: right;
+  }
+
+  .run-box{
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 300px;
+    bottom: 90px;
+    overflow: hidden;
+
+}
+.run-box img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transition: 0.3s all;
+}
+.run-box.active img{
+    right: 100%;
+}
