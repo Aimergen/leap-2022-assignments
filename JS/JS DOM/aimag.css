@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+ul{
+    margin-left: 50px;
+    width: 50%;
+    list-style-type: none;
+    text-align: start;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: rgb(129, 139, 136);
+    color: rgb(13, 26, 26);
+}

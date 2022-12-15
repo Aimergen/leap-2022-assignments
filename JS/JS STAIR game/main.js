@@ -36,3 +36,12 @@ const firsrCB= document.querySelector('input[type="checkbox"]')[0];
 firsrCB.addEventListener('click', function(e){
     console.log(e.target.checked);
 });
+
+//   attribute nemeh
+btn.setAttribute("disabled", "disabled"); // setAttribute params: ni ("attributeName","attributeValue")
+setTimeout(function () {
+  //   attributiin utgiig avahdaa getAttribute("attributeName")
+  if (btn.getAttribute("disabled") === "disabled")
+    btn.removeAttribute("disabled"); // removeAttribute("attributeName")
+}, 1000);
+
