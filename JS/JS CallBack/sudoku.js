@@ -15,13 +15,18 @@ for(let row=0; row<sudoku.length; row++){
     const tr=document.createElement('tr');
     for (let col=0; col<cols.length; col++){
         const td=document.createElement('td');
+        td.set
         if(cols[col]!==0){
             td.className='default';
             td.innerHTML=cols(col);
         }else{
             td.addEventListener('click', function(){
+                if(chosenTd){
+                    chosenTd.classList.remove('active');
+                }
                 chosenTd=e.target;
                 console.log(chosenTd)
+                e.target.classList.add('active');
             });
         }
         tr.appendChild(td);
@@ -33,12 +38,22 @@ tableTarget.appendChild(tbody);
 const validKeys='0123456789';
 
 document.addEventListener('keypress',function(e){
-    const key=e.key;
-    if(validKeys.includes(key)){
-        if(key==0){
-            chosenTd.innerHTML='';
+    if(chosenTd){
+        const key=e.key;
+        if(validKeys.includes(key)){
+            if(key==0){
+                chosenTd.innerHTML='';
+            }
+            chosenTd.innerHTML=key;
         }
-        chosenTd.innerHTML=key;
-    }
+        const x=Number(chosenTd.getAttribute('x'));
+        const y=Number(chosenTd.getAttribute('y'));
+        const input 
+        sudoku[x][y]=Number(key);
+        
+        //hevtee tenhlegiin daguu shadlgah
+        for(let i=0; i<9; i++){
 
+        }
+    }
 });
