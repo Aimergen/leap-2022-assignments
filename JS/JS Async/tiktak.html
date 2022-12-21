@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tik tak</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: purple;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            line-height: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            background-color: blueviolet;
+        }
+        td:nth-child(3n){
+            border-right: 2px solid #000;
+        }
+        tr:nth-child(3n){
+            border-bottom: 2px solid #000;
+        }
+      
+        td:not(.default){
+            cursor: pointer;
+        }
+        td.active{
+            background: rgba(83, 104, 149, 0.5);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            background-color: aquamarine;
+        }
+        td.error{
+            background: rgba(255, 104, 149, 0.5);
+        }
+        td::after{
+            background-color: purple;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    
+    <table id="target"></table>
+
+    <script src="/tiktak.js"></script>
+</body>
+</html>
