@@ -15,7 +15,7 @@ for(let row=0; row<sudoku.length; row++){
     const tr=document.createElement('tr');
     for (let col=0; col<cols.length; col++){
         const td=document.createElement('td');
-        td.set
+        td.set 
         if(cols[col]!==0){
             td.className='default';
             td.innerHTML=cols(col);

@@ -23,6 +23,35 @@ function getProductCard(product){
 </div>`;
 }
 
+// // davtalt 1
+// for (let i = 0; i < data.products.length; i++) {
+//     const product = data.products[i];
+//     productsTarget.innerHTML += getProductCard(product);
+//   }
+//   // davtalt 2
+//   for (const product of data.products) {
+//     productsTarget.innerHTML += getProductCard(product);
+//   }
+
+//   // davtalt 3
+  products.products.forEach(function (product) {
+    productsTarget.innerHTML += getProductCard(product);
+  });
+
+//   // davtalt 4
+//   data.products.map((product) => {
+//     productsTarget.innerHTML += getProductCard(product);
+//   });
+
+let products=data.products
+
+products=products.filter((product)=>{
+    return product.title.includes('iPhone');
+});
+
+products=products.filter((product)=>{
+    return product.price < 500;
+});
 const productTarget=document.querySelector('#productTarget');
 
 function getPagination(total,curentPage,limit){
@@ -46,6 +75,13 @@ function getPagination(total,curentPage,limit){
 }
 async function getProducts(limit=9,skip=0){
     productTarget.innerHTML= '';
+    let dataUrl=`https://dummyjson.com/products?limit=${limit}&skip=${skip}`;
+    if(category){
+        dataUrl=`https://dummyjson.com/products?limit=${category}&skip=${skip}`;
+    }
+    if(searchQuery){
+        dataUrl=`https://dummyjson.com/products?limit=${searchQuery}&skip=${skip}`;
+    }
     const res=await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`);
     const data=await res.json();
 
@@ -56,5 +92,46 @@ async function getProducts(limit=9,skip=0){
 
 }
 
+const params=new URL(window.location).searchParams;
+console.log(params);
+const category =params.get('category');
+const limit =Number(params.get('limit')) || 12; 
+const page =Number(params.get('page')) || 1;
+const searchQuery=params.get('q');
+
 getProducts();
+
+function getMenuItem(menuItem){
+return`
+<li class="nav-item">
+<a class="nav-link active" ${menuItem.isActive && 'active'}"
+ aria-current="page" 
+ href="${menuItem.link}">
+ ${menuItem.name}
+ </a>
+</li>`;
+}
+
+const menuTarget=document.querySelector('#menTarget');
+
+async function getCategories(){
+    const res=await fetch('https://dymmyjson.com/products/categories');
+    const categories=await res.json();
+    return categories.slice(0, 5);
+}
+
+ async function getMenus(){
+    let categories=await getCategories();
+    const menuCategories= categories.map((category)=>{
+        return{
+            isActive:false,
+            link: '/apps/work/fetch.html?category='+category,
+            name: category,
+        };
+    });
+
+    menuCategories.map((menuCategory)=>{
+        menuTarget.innerHTML+=getMenuItem(menuCategory);
+    })
+}
 
