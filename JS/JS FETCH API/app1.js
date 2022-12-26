@@ -26,7 +26,7 @@ function getProductCard(product) {
   function getPagination(total, currentPage, limit) {
     let pagination = `<nav aria-label="..."> <ul class="pagination justify-content-center">`;
     const totalPages = Math.ceil(total / limit);
-    for (let page = 1; page <= totalPages; page++) {
+    for (let page = 1; page <= totalPages; page++) { 
       if (page === currentPage) {
         pagination += ` 
             <li class="page-item active" aria-current="page">
@@ -112,3 +112,9 @@ function getProductCard(product) {
   }
   
   getMenus();
+
+  fetch('https://dummyjson.com/products/1')
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+  
